@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using HtmlAgilityPack;
 
 namespace HttpNewsPAT
 {
@@ -57,5 +59,19 @@ namespace HttpNewsPAT
             string responseFromserver = new StreamReader(response.GetResponseStream()).ReadToEnd();
             Console.WriteLine (responseFromserver);
         }
+        //public static void ParsingHtml(string htmlCode)
+        //{
+        //    var html= new HtmlDocument();
+        //    html.LoadHtml(htmlCode);
+        //    var Document = html.DocumentNode;
+        //    IEnumerable DivsNews = Document.Descendants(0).Where(n => n.HasClass("news"));
+        //    foreach (HtmlNode htmlNode in DivsNews)
+        //    {
+        //        var src = DivsNews.ChildNodes[1].GetAttributeValue("src","none");
+        //        var name = DivsNews.ChildNodes[3].InnerText;
+        //        var description = DivsNews.ChildNodes[5].InnerText;
+        //        Console.WriteLine(name + "\n " + "Изображение:" + src + "\n" + "Описание:" + description + "\n");
+        //    }
+        //}
     }
 }
